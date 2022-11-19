@@ -1,14 +1,18 @@
 /**
  * Define required packages.
  */
-const gulp = require("gulp");
-const autoprefixer = require("autoprefixer");
-const del = require("del");
-const duplicates = require("postcss-discard-duplicates");
-const plumber = require("gulp-plumber");
-const replace = require("gulp-replace");
-const postcss = require("gulp-postcss");
-const sass = require("gulp-sass")(require("sass"));
+import { deleteSync } from "del";
+import autoprefixer from "autoprefixer";
+import dartSass from "sass";
+import duplicates from "postcss-discard-duplicates";
+import gulp from "gulp";
+import gulpSass from "gulp-sass";
+import plumber from "gulp-plumber";
+import postcss from "gulp-postcss";
+import rename from "gulp-rename";
+import replace from "gulp-replace";
+
+const sass = gulpSass(dartSass);
 
 /**
  * Define domain for @-moz-document
@@ -30,7 +34,7 @@ const domainRegexs = {
 /**
  * Destination directory path with slash.
  */
-const DEST = "css/";
+const DEST = "dist/";
 
 /**
  * Build CSS.
@@ -38,7 +42,12 @@ const DEST = "css/";
  * @param {Function} done
  */
 const buildCSS = (done) => {
-	gulp.src("./src/*.scss")
+	const entries = [
+		"./src/stackoverflow/stackoverflow.scss",
+		"./src/wordpress/wordpress.scss",
+	];
+
+	gulp.src(entries)
 		.pipe(plumber())
 		.pipe(sass({ outputStyle: "expanded" }))
 		.pipe(postcss([duplicates(), autoprefixer()]))
@@ -47,6 +56,7 @@ const buildCSS = (done) => {
 				return domainRegexs?.[this.file.relative] || match;
 			})
 		)
+		.pipe(rename({ suffix: ".user" }))
 		.pipe(gulp.dest(DEST));
 
 	done();
@@ -58,7 +68,7 @@ const buildCSS = (done) => {
  * @param {Function} done
  */
 const cleanAssets = (done) => {
-	del.sync(DEST);
+	deleteSync(DEST);
 
 	done();
 };
@@ -69,9 +79,13 @@ const cleanAssets = (done) => {
  * @param {Function} done
  */
 const watchAssets = (done) => {
-	gulp.watch("src/**/*.scss", gulp.series(buildCSS));
+	gulp.watch(paths.src + "/**/*.scss", gulp.series(buildCSS));
+
 	done();
 };
 
-gulp.task("build", gulp.series(cleanAssets, buildCSS));
-gulp.task("watch", gulp.series(watchAssets));
+const build = gulp.series(cleanAssets, buildCSS);
+const watcher = gulp.series(watchAssets);
+
+export { build };
+export { watcher as watch };

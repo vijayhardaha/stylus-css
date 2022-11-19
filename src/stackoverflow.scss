@@ -1,14 +1,16 @@
-/* stylelint-disable no-invalid-position-at-import-rule */
-@use "sass:color";
-
 /* ==UserStyle==
-@name           stackoverflow.com - 13/09/2022, 03:22:43
-@namespace      github.com/openstyles/stylus
+@name           Stackoverflow Modern UI
+@namespace      https://github.com/vijayhardaha/stylus-css
 @version        1.0.0
-@description    A new userstyle
-@author         Me
+@description    A modern UI for stackoverflow with poppins font.
+@author         Vijay Hardaha (https://github.com/vijayhardaha/)
+@homepageURL    https://github.com/vijayhardaha/stylus-css
+@supportURL     https://github.com/vijayhardaha/stylus-css/issues
+@updateURL      https://raw.githubusercontent.com/vijayhardaha/stylus-css/master/dist/stackoverflow.user.css
+@license        MIT
 ==/UserStyle== */
 
+@use "sass:color";
 $black: #000;
 $white: #fff;
 
@@ -17,22 +19,25 @@ $light-2: #f8f5ef;
 $light-3: #fcf8f1;
 $light-4: #fbfbfb;
 
-$primary: #7952b3;
-$primary-5: color.adjust($primary, $lightness: -5%);
-$primary-8: color.adjust($primary, $lightness: -8%);
-$primary--5: color.adjust($primary, $lightness: 5%);
-$primary--8: color.adjust($primary, $lightness: 8%);
+$ln-s: 10%;
+$ln-m: 15%;
+$ln-l: 25%;
+$primary: #0051c3;
+$primary-5: color.adjust($primary, $lightness: - $ln-m);
+$primary-8: color.adjust($primary, $lightness: - $ln-l);
+$primary--5: color.adjust($primary, $lightness: $ln-m);
+$primary--8: color.adjust($primary, $lightness: $ln-l);
 
 $light-primary: #fee8b5;
 $light-primary: color.adjust($primary, $lightness: 30%);
-$light-primary-5: color.adjust($light-primary, $lightness: -5%);
-$light-primary-8: color.adjust($light-primary, $lightness: -8%);
-$light-primary--5: color.adjust($light-primary, $lightness: 5%);
-$light-primary--8: color.adjust($light-primary, $lightness: 8%);
+$light-primary-5: color.adjust($light-primary, $lightness: - $ln-m);
+$light-primary-8: color.adjust($light-primary, $lightness: - $ln-l);
+$light-primary--5: color.adjust($light-primary, $lightness: $ln-m);
+$light-primary--8: color.adjust($light-primary, $lightness: $ln-l);
 
 $dark: #1d1c1c;
-$dark-5: color.adjust($dark, $lightness: -5%);
-$dark-8: color.adjust($dark, $lightness: -8%);
+$dark-5: color.adjust($dark, $lightness: - $ln-m);
+$dark-8: color.adjust($dark, $lightness: - $ln-l);
 
 $btn-color: $white;
 $btn-bg-color: $primary;
@@ -45,14 +50,16 @@ $font-color: $dark;
 
 @-moz-document url-prefix() {
 
+	/* stylelint-disable-next-line no-invalid-position-at-import-rule */
 	@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-	@import url("http://fonts.cdnfonts.com/css/anonymous-pro");
+	/* stylelint-disable-next-line no-invalid-position-at-import-rule */
+	@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
 
 	html,
 	body {
 		--ff-sans: "Poppins", sans-serif;
 		--ff-serif: "Poppins", sans-serif;
-		--ff-mono: "Anonymous Pro", sans-serif;
+		--ff-mono: "Inconsolata", monospace;
 	}
 
 	.component-colors,
