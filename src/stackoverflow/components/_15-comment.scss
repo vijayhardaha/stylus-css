@@ -1,0 +1,70 @@
+ul.comments-list .comment > * {
+	border-bottom: 1px dashed $border-color;
+}
+
+.js-comment-actions {
+
+	.s-btn {
+
+		&.s-btn__unset,
+		&.s-btn__unset:hover,
+		&.s-btn__unset:active,
+		&.s-btn__unset:focus {
+			width: 20px;
+			height: 20px;
+			padding: 0;
+		}
+	}
+}
+
+.wmd-button-bar {
+	border-color: $input-border-color;
+	background-color: $white;
+}
+
+.wmd-button-row {
+	border-color: $input-border-color;
+}
+
+.new-contributor-indicator {
+	display: none !important;
+}
+
+.grippie {
+	height: 22px;
+	border-color: $input-border-color;
+	background-color: $light;
+	background-position: calc(50% + 34px) -358px;
+}
+
+.post-editor {
+
+	fieldset.mb8 {
+		display: none !important;
+	}
+
+}
+
+.post-form {
+
+	.form-submit {
+		padding: 0;
+	}
+}
+
+.wmd-preview.s-prose:empty {
+	margin: 0 !important;
+}
+
+.bottom-notice {
+	--font-weight: #{$font-weight-normal};
+
+	@include font-size($font-size-sm);
+}
+
+textarea.wmd-input,
+textarea#wmd-input,
+.wmd-preview.s-prose {
+
+	@include font-size($font-size-sm);
+}

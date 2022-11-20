@@ -1,0 +1,87 @@
+html,
+body {
+	--ff-sans: var(--vh-sans);
+	--ff-serif: var(--vh-sans);
+	--ff-mono: var(--vh-mono);
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: $font-weight-base;
+
+	a:hover,
+	a:active,
+	a:focus {
+		text-decoration: none !important;
+	}
+}
+
+body {
+	padding-top: #{$header-height + 40};
+}
+
+%heading {
+	margin-top: 0; // 1
+	margin-bottom: $headings-margin-bottom;
+	color: $headings-color;
+	font-family: $headings-font-family;
+	font-style: $headings-font-style;
+	font-weight: $headings-font-weight;
+	line-height: $headings-line-height;
+}
+
+h1 {
+
+	@extend %heading;
+	@include font-size($h1-font-size);
+}
+
+h2 {
+
+	@extend %heading;
+	@include font-size($h2-font-size);
+}
+
+h3 {
+
+	@extend %heading;
+	@include font-size($h3-font-size);
+}
+
+h4 {
+
+	@extend %heading;
+	@include font-size($h4-font-size);
+}
+
+h5 {
+
+	@extend %heading;
+	@include font-size($h5-font-size);
+}
+
+h6 {
+
+	@extend %heading;
+	@include font-size($h6-font-size);
+}
+
+// Reset margins on paragraphs
+//
+// Similarly, the top margin on `<p>`s get reset. However, we also reset the
+// bottom margin to use `rem` units instead of `em`.
+
+p {
+	margin-top: 0;
+	margin-bottom: $paragraph-margin-bottom;
+}
+
+.s-popover[data-popper-placement^="bottom"] > .s-popover--arrow::after,
+.s-popover .s-popover--arrow__tc::after,
+.s-popover .s-popover--arrow__tl::after,
+.s-popover .s-popover--arrow__tr::after {
+	box-shadow: -1px -1px 1px 0 rgba($black, 0.05);
+}
+
+.snippet-code {
+	border-color: $border-color;
+}

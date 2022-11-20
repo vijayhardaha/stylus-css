@@ -1,0 +1,95 @@
+.s-sidebarwidget {
+	--s-sidebarwidget-content-padding: calc(var(--su16) - var(--su1));
+	--s-sidebarwidget-content-inner-spacing: var(--su12);
+	--s-sidebarwidget-content-outer-spacing: var(--su16);
+	--s-sidebarwidget-content-separator-color: #{$gray-200};
+	--s-sidebarwidget-header-background-color: #{$white};
+	position: relative;
+	border: 0;
+	border-radius: #{$border-radius};
+	background-color: #{$white};
+	box-shadow: #{$card-box-shadow};
+	font-size: #{$font-size-sm};
+
+	&::after {
+		content: none;
+	}
+
+	&--header {
+		border-top: 0;
+		font-weight: $headings-font-weight;
+	}
+
+	&[data-controller="se-uql-list"] {
+
+		a.s-btn__link {
+
+			@include button();
+			@include button-outline-variant("success", $success);
+		}
+	}
+}
+
+.s-sidebarwidget.s-anchors,
+#hot-network-questions,
+#feed-link {
+	display: none !important;
+}
+
+.js-tag-preferences-container {
+
+	.js-show-add-ignored {
+		margin-left: 0 !important;
+	}
+}
+
+.module {
+
+	&.sidebar-related,
+	&.sidebar-linked {
+		--s-sidebarwidget-content-padding: calc(var(--su16) - var(--su1));
+		--s-sidebarwidget-content-inner-spacing: var(--su12);
+		--s-sidebarwidget-content-outer-spacing: var(--su16);
+		--s-sidebarwidget-content-separator-color: #{$gray-200};
+		--s-sidebarwidget-header-background-color: #{$white};
+
+		@include card();
+		padding: 0;
+
+		>h4 {
+			margin: 0 0 0 !important;
+			padding: var(--s-sidebarwidget-content-inner-spacing) var(--s-sidebarwidget-content-padding);
+			border-top-left-radius: var(--br-sm);
+			border-top-right-radius: var(--br-sm);
+			font-weight: $font-weight-bold !important;
+		}
+
+		>div {
+			margin: 0;
+			padding: var(--s-sidebarwidget-content-outer-spacing) var(--s-sidebarwidget-content-padding);
+			border-top: 1px solid var(--s-sidebarwidget-content-separator-color);
+		}
+	}
+}
+
+.show-votes .sidebar-linked .spacer > a.question-hyperlink,
+.show-votes .sidebar-related .spacer > a.question-hyperlink {
+	padding-top: 0;
+}
+
+.show-votes .sidebar-linked .spacer > a:first-child .answer-votes,
+.show-votes .sidebar-related .spacer > a:first-child .answer-votes {
+	border-radius: var(--br-sm);
+}
+
+.s-sidebarwidget:not(.s-anchors) a:not(.button):not(.s-btn):not(.post-tag):not(.s-sidebarwidget--action):not(.s-user-card--link),
+.s-sidebarwidget:not(.s-anchors) a:not(.button):not(.s-btn):not(.post-tag):not(.s-sidebarwidget--action):not(.s-user-card--link):visited,
+.s-sidebarwidget--action {
+	margin: 0;
+	color: var(--theme-link-color);
+	font-weight: $font-weight-normal;
+	line-height: $line-height-sm;
+	text-transform: capitalize;
+
+	@include font-size($font-size-sm);
+}

@@ -1,0 +1,19 @@
+@function theme-color($key: "primary") {
+
+	@return map-get($theme-colors, $key);
+}
+
+@function theme-inverse-color($key: "primary") {
+
+	@return map-get($theme-inverse-colors, $key);
+}
+
+@function theme-active-color($key: "primary") {
+
+	@return map-get($theme-active-colors, $key);
+}
+
+@function theme-light-color($key: "primary") {
+
+	@return map-get($theme-light-colors, $key);
+}

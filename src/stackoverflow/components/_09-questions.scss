@@ -1,0 +1,102 @@
+.s-post-summary {
+
+	@include card();
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+
+.s-post-summary--stats {
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	margin-bottom: 0.5rem;
+
+	@include font-size($font-size-sm);
+
+	.s-post-summary--stats-item {
+
+		&.has-answers {
+			border: 1px solid $primary;
+			color: $primary;
+
+			&.has-accepted-answer {
+				border-color: $primary;
+				background: $primary;
+				color: $white;
+			}
+		}
+	}
+}
+
+.s-post-summary--content {
+
+	.s-post-summary--content-title {
+		--font-weight: #{$font-weight-bold};
+	}
+}
+
+.s-post-summary--meta {
+	flex-direction: column;
+	align-items: flex-start;
+
+	.js-post-tag-list-wrapper {
+		margin-bottom: 0;
+	}
+
+	.s-user-card {
+		margin-left: 0;
+	}
+}
+
+.post-layout--right {
+
+	&.postcell,
+	&.answercell {
+
+		> div {
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+
+			.jc-end {
+				margin-top: 0 !important;
+			}
+
+			.user-info {
+				padding-top: 0;
+			}
+
+			.user-info .user-action-time {
+				margin-top: 0;
+			}
+		}
+
+		.gs8 > .d-flex,
+		.gs8 > .flex--item {
+			margin-top: 0;
+		}
+	}
+
+	> div.s-prose {
+		margin-bottom: 0.75rem !important;
+		padding-bottom: 0.75rem !important;
+		border-bottom: 1px dashed $border-color;
+	}
+
+	.post-taglist {
+		margin-bottom: 0.75rem !important;
+		padding-bottom: 0.75rem !important;
+		border-bottom: 1px dashed $border-color;
+
+		.js-post-tag-list-wrapper {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.bounty-indicator-tab {
+	position: relative;
+	top: -2px;
+	border-radius: var(--br-sm);
+	background-color: $success;
+}

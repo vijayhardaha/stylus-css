@@ -1,0 +1,18 @@
+.s-input,
+.s-textarea {
+
+	@include form-control();
+}
+
+.s-select {
+
+	&::after,
+	&::before {
+		content: none;
+	}
+
+	> select {
+
+		@include form-select();
+	}
+}

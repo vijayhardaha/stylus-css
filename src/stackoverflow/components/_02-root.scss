@@ -1,0 +1,89 @@
+:root {
+	--vh-sans: #{$font-family-sans-serif};
+	--vh-mono: #{$font-family-monospace};
+}
+
+body.unified-theme {
+	--br-sm: #{$border-radius};
+	--br-md: #{$border-radius};
+	--br-lg: #{$border-radius-lg};
+
+	--bs-sm: #{$box-shadow-xs};
+	--bs-md: #{$box-shadow-sm};
+	--bs-lg: #{$box-shadow};
+	--bs-xl: #{$box-shadow-lg};
+
+	--bc-lightest: #{$border-color};
+	--bc-lighter: #{$border-color};
+	--bc-light: #{$border-color};
+	--bc-medium: #{$border-color};
+	--bc-dark: #{$border-color};
+	--bc-darker: #{$border-color};
+
+	--highlight-bg: #{$gray-100};
+
+	--theme-button-color: var(--blue-600);
+	--theme-button-hover-color: var(--blue-700);
+	--theme-button-hover-background-color: var(--blue-050);
+	--theme-button-active-background-color: var(--blue-100);
+	--theme-button-selected-color: var(--blue-900);
+	--theme-button-selected-background-color: var(--blue-200);
+	--theme-button-filled-color: var(--powder-700);
+	--theme-button-filled-background-color: var(--powder-100);
+	--theme-button-filled-border-color: var(--powder-500);
+	--theme-button-filled-hover-color: var(--powder-800);
+	--theme-button-filled-hover-background-color: var(--powder-300);
+	--theme-button-filled-active-background-color: var(--powder-400);
+	--theme-button-filled-active-border-color: var(--powder-600);
+	--theme-button-filled-selected-color: var(--powder-900);
+	--theme-button-filled-selected-background-color: var(--powder-300);
+	--theme-button-filled-selected-border-color: var(--powder-700);
+	--theme-button-outlined-border-color: var(--blue-400);
+	--theme-button-outlined-selected-border-color: var(--blue-600);
+	--theme-button-primary-background-color: var(--blue-500);
+	--theme-button-primary-hover-background-color: var(--blue-600);
+	--theme-button-primary-active-background-color: var(--blue-700);
+	--theme-button-primary-selected-background-color: var(--blue-800);
+
+	--theme-background-color: #{$body-bg};
+	--theme-content-background-color: #{$body-bg};
+	--theme-content-border-color: #{$border-color};
+
+	--theme-header-background-color: var(--theme-primary-color);
+	--theme-header-background-position: center left;
+	--theme-header-background-repeat: repeat;
+	--theme-header-background-size: auto;
+	--theme-header-background-border-bottom: 0;
+	--theme-header-link-color: var(--theme-primary-color);
+	--theme-topbar-item-color-hover: #{$success};
+	--theme-topbar-item-background-hover: transparent;
+
+	--theme-footer-background-color: #{$white};
+	--theme-footer-title-color: #{$body-color};
+	--theme-footer-text-color: #{$white-inverse};
+	--theme-footer-link-color: #{$white-inverse};
+	--theme-footer-link-color-hover: #{$primary};
+	--theme-footer-link-color-active: #{$white-inverse};
+
+	--theme-link-color: #{$link-color};
+	--theme-link-color-hover: #{$link-hover-color};
+	--theme-link-color-visited: #{$link-hover-color};
+
+	--theme-tag-color: #{$light-inverse};
+	--theme-tag-background-color: #{$light};
+	--theme-tag-border-color: transparent;
+	--theme-tag-hover-color: #{$light-inverse};
+	--theme-tag-hover-background-color: #{$light-active};
+	--theme-tag-hover-border-color: transparent;
+
+	--theme-body-font-family: var(--ff-sans);
+	--theme-body-font-color: #{$body-color};
+
+	--theme-post-title-font-family: var(--ff-sans);
+	--theme-post-title-color: var(--theme-link-color);
+	--theme-post-title-color-hover: var(--theme-link-color-hover);
+	--theme-post-title-color-visited: var(--theme-link-color-visited);
+	--theme-post-body-font-family: var(--ff-sans);
+	--theme-post-owner-background-color: var(--theme-secondary-075);
+	--theme-post-owner-new-background-color: var(--powder-200);
+}

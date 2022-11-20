@@ -1,0 +1,43 @@
+#question-header {
+
+	.question-hyperlink {
+		font-weight: $font-weight-bold;
+	}
+}
+
+.question {
+
+	@include card();
+	padding: 1.5rem;
+}
+
+.post-layout--left,
+.post-layout--left.votecell {
+	padding-right: 1.5rem;
+	padding-left: 0;
+
+	.js-voting-container {
+
+		>.flex--item {
+			margin: 0;
+		}
+
+		>.s-btn {
+			margin: 0 0 0.375rem 0;
+		}
+	}
+}
+
+.post-layout--right {
+	padding-right: 0;
+}
+
+.s-prose pre:not(.s-code-block),
+.s-prose code {
+
+	@include font-size($font-size-sm);
+}
+
+.s-prose *:not(.s-code-block) > code {
+	background-color: var(--highlight-bg);
+}

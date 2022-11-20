@@ -1,0 +1,119 @@
+@mixin button() {
+	display: inline-block;
+	border: $btn-border-width solid transparent;
+	background-color: transparent;
+
+	box-shadow: none !important;
+	color: $body-color;
+	font-family: $btn-font-family;
+	font-weight: $btn-font-weight;
+	line-height: $btn-line-height;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	white-space: $btn-white-space;
+	user-select: none;
+
+	@include button-size(
+		$btn-padding-y,
+		$btn-padding-x,
+		$btn-font-size,
+		$btn-border-radius
+	);
+	@include transition($btn-transition);
+
+	&:hover {
+		color: $body-color;
+		text-decoration: none;
+	}
+
+	&:focus,
+	&:active,
+	&.is-selected {
+		box-shadow: none !important;
+	}
+
+	&:disabled,
+	&.disabled,
+	fieldset:disabled & {
+		opacity: $btn-disabled-opacity;
+		pointer-events: none;
+
+		@include box-shadow(none);
+	}
+}
+
+@mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
+	padding: $padding-y $padding-x;
+
+	@include font-size($font-size);
+	@include border-radius($border-radius, 0);
+
+	&:hover {
+		padding: $padding-y $padding-x;
+	}
+}
+
+@mixin button-variant($name, $value) {
+	$tmp-color: theme-inverse-color($name);
+	$tmp-border-color: $value;
+	$tmp-bg-color: $value;
+	$tmp-color-active: theme-inverse-color($name);
+	$tmp-border-color-active: theme-active-color($name);
+	$tmp-bg-color-active: theme-active-color($name);
+
+	border-color: $tmp-border-color;
+	background-color: $tmp-bg-color;
+	color: $tmp-color;
+
+	&:focus,
+	&:hover,
+	&:active,
+	&.is-selected {
+		border-color: $tmp-border-color-active;
+		background-color: $tmp-bg-color-active;
+		color: $tmp-color-active;
+	}
+}
+
+@mixin button-outline-variant($name, $value) {
+	$tmp-color: $value;
+	$tmp-border-color: $value;
+	$tmp-bg-color: transparent;
+	$tmp-color-active: theme-inverse-color($name);
+	$tmp-border-color-active: theme-active-color($name);
+	$tmp-bg-color-active: theme-active-color($name);
+
+	border-color: $tmp-border-color;
+	background-color: $tmp-bg-color;
+	color: $tmp-color;
+
+	&:focus,
+	&:hover,
+	&:active,
+	&.is-selected {
+		border-color: $tmp-border-color-active;
+		background-color: $tmp-bg-color-active;
+		color: $tmp-color-active;
+	}
+}
+
+@mixin button-sm() {
+
+	@include button-size(
+		$btn-padding-y-sm,
+		$btn-padding-x-sm,
+		$btn-font-size-sm,
+		$btn-border-radius-sm
+	);
+}
+
+@mixin button-lg() {
+
+	@include button-size(
+		$btn-padding-y-lg,
+		$btn-padding-x-lg,
+		$btn-font-size-lg,
+		$btn-border-radius-lg
+	);
+}

@@ -1,0 +1,16 @@
+.comments-link {
+
+	&.js-add-link {
+
+		@include button();
+		@include button-sm();
+		@include button-variant("light", $light);
+	}
+}
+
+a.bounty-link {
+
+	@include button();
+	@include button-sm();
+	@include button-variant("dark", $dark);
+}

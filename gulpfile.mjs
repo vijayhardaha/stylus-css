@@ -3,6 +3,7 @@
  */
 import { deleteSync } from "del";
 import autoprefixer from "autoprefixer";
+import cleancss from "gulp-clean-css";
 import dartSass from "sass";
 import duplicates from "postcss-discard-duplicates";
 import gulp from "gulp";
@@ -56,6 +57,7 @@ const buildCSS = (done) => {
 				return domainRegexs?.[this.file.relative] || match;
 			})
 		)
+		.pipe(cleancss({ format: "beautify" }))
 		.pipe(rename({ suffix: ".user" }))
 		.pipe(gulp.dest(DEST));
 
@@ -79,7 +81,7 @@ const cleanAssets = (done) => {
  * @param {Function} done
  */
 const watchAssets = (done) => {
-	gulp.watch(paths.src + "/**/*.scss", gulp.series(buildCSS));
+	gulp.watch("src/**/*.scss", gulp.series(buildCSS));
 
 	done();
 };

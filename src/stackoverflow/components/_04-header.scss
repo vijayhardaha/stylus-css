@@ -1,0 +1,41 @@
+.s-topbar {
+	--bs-sm: #{$header-box-shadow};
+	--theme-topbar-background-color: #{$header-bg};
+	--theme-topbar-height: #{$header-height};
+	--theme-topbar-accent-border: none;
+	border-bottom: 1px solid $border-color;
+
+	.s-topbar--searchbar .s-topbar--searchbar--input-group .s-input {
+
+		@include form-control();
+
+		+ .svg-icon {
+			display: none !important;
+		}
+	}
+
+	.s-avatar.s-avatar__24 {
+		--_size: 42px;
+	}
+
+	.s-user-card--awards {
+		flex-direction: column;
+		align-items: flex-start;
+
+		li {
+
+			@include font-size($font-size-base);
+		}
+
+		.-badges {
+
+			@include font-size($font-size-sm);
+		}
+	}
+}
+
+.topbar-dialog {
+	border-radius: 0 0 var(--br-sm) var(--br-sm);
+	border-color: $border-color;
+	box-shadow: $card-box-shadow;
+}

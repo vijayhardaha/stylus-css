@@ -1,0 +1,114 @@
+.s-btn {
+
+	@include button();
+
+	&.hidden,
+	&.dno,
+	&._hidden {
+		display: none;
+	}
+
+	&.s-btn__unset,
+	&.s-btn__unset:hover,
+	&.s-btn__unset:active,
+	&.s-btn__unset:focus {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: calc(1.5em + 1.5rem + 2px);
+		height: calc(1.5em + 1.5rem + 2px);
+		padding: 0.5rem 1rem;
+		transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+		border: 0;
+		border-radius: 0.65rem;
+		outline: 0;
+		background-color: $secondary-light;
+		box-shadow: none !important;
+		color: $secondary-inverse;
+		font-size: 1rem;
+		font-size: 0.925rem;
+		font-weight: 600;
+		line-height: 1.5;
+		text-align: center;
+		text-decoration: none;
+		vertical-align: middle;
+		user-select: none;
+	}
+
+	&.s-btn__unset:hover,
+	&.s-btn__unset:active,
+	&.s-btn__unset:focus {
+		background-color: $light;
+		color: $success;
+	}
+
+	&.s-btn__link {
+		display: inline;
+		padding: 0;
+		border: none;
+		border-radius: 0;
+		outline: initial;
+		background: none;
+		box-shadow: none;
+		font: inherit;
+		text-align: inherit;
+		text-decoration: none;
+		cursor: pointer;
+		user-select: auto;
+	}
+}
+
+.s-btn__primary {
+
+	@include button-variant("primary", $primary);
+}
+
+.s-btn__danger {
+
+	@include button-variant("danger", $danger);
+}
+
+.s-btn__outlined__primary {
+
+	@include button-outline-variant("primary", $primary);
+}
+
+.s-btn__lg {
+
+	@include button-lg();
+}
+
+.s-btn__sm {
+
+	@include button-sm();
+}
+
+.s-btn__filled,
+.s-btn__outlined {
+
+	@include button-outline-variant("success", $success);
+}
+
+.s-btn__muted.s-btn__outlined {
+	$tmp-color: $gray-500;
+	$tmp-border-color: $gray-300;
+	$tmp-bg-color: transparent;
+	$tmp-color-active: $gray-800;
+	$tmp-border-color-active: $gray-300;
+	$tmp-bg-color-active: $gray-200;
+
+	border-color: $tmp-border-color;
+	background-color: $tmp-bg-color;
+	box-shadow: none !important;
+	color: $tmp-color;
+
+	&:focus,
+	&:hover,
+	&:active,
+	&.active,
+	&.is-selected {
+		border-color: $tmp-border-color-active;
+		background-color: $tmp-bg-color-active;
+		color: $tmp-color-active;
+	}
+}
